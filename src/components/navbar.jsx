@@ -1,8 +1,6 @@
 import React from 'react'
 import Mylogo from '../assets/personal-img.jpg';
-import { motion } from "framer-motion";
-import Skills from './skills';
-import { Link } from 'react-scroll';
+
 
 function navbar() {
   const navMenu = [

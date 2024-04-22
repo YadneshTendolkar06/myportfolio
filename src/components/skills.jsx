@@ -1,12 +1,9 @@
 import React from 'react'
 import DetailedSkills from './detailedSkills.jsx'
-import ReactIcon from '../assets/ReactIcon.svg';
 import skillsData from '../constants/skills.js';
 
 
 function skills() {
-
-
   return (
     <>
       <div id='skills' className='skillsElemet w-full h-screen box-border md:pr-24 flex flex-wrap rounded-t-3xl bg-orange-400 pt-[20vh] md:pt-[25vh] '>

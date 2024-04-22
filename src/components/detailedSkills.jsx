@@ -3,13 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 
 function detailedSkills({data}) {
-   useEffect(()=>{
-    window.addEventListener("mousemove", (e)=>{
-    mouseX = e.clientX;
-    mouseY = e.clientY;
 
-    })
-  })
 
   return (
     <>
