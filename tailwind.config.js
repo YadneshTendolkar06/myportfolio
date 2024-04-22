@@ -29,6 +29,10 @@ export default {
         typing: "typing 3s steps(20) alternate, blink .7s infinite"
       }
     },
+    fontFamily:{
+      'poppins':"Poppins"
+
+    }
   },
   plugins: [],
 }

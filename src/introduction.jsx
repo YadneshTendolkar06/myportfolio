@@ -1,24 +1,33 @@
-import React, {useState} from 'react';
+import React, {useState,useRef} from 'react';
 import { Fade } from "react-awesome-reveal";
+import Typewriter from 'typewriter-effect';
+import myprofileImage from "./assets/personal-img.jpg"
+import { motion } from "framer-motion";
 
-function introduction() {
-    var [intro,upd] = useState("Hello, I'm Yadnesh Tendolkar. i am Computer Engineer.");
+function introduction({reference}) {
+
+    const [intro,setIntro] = useState([ `Hello I'm Yadnesh Tendolkar`,`I am Computer Engineer.`]);
   return (
     <>
-    <div className=' text-white text-4xl tracking-tighter font-semibold px-5 '>
-          <div className='flex flex-col md:flex-row justify-between md:mx-[150px] '>
+    <div className='font-poppins text-white text-4xl tracking-tighter font-semibold px-5 '>
+          <div className='flex flex-col md:flex-row justify-between md:mx-[250px] '>
           <Fade direction='left'>
-            <div className='text-4xl md:py-20'><h1>About</h1>
-              <div className='animate-typing overflow-hidden whitespace-wrap border-r-4 border-r-white text-2xl text-white font-bold'>
-                {intro}
-                </div>
+            <div className='text-4xl pt-24 md:py-40'><h1>About</h1>
+            <Typewriter
+  options={{
+    strings:intro ,
+    autoStart: true,
+    loop: true,
+  }}
+/>
             </div>
             </Fade>
-            <div className='md:w-96 md:py-20'>
+
+            <motion.div drag dragConstraints={reference} className='md:w-96 md:py-40 ' >
             <Fade direction='right'>
-              <img src='../public/personal img.jpg' ></img>
+              <img src={myprofileImage} className=' md:rounded-3xl overflow-hidden hover:shadow-lg hover:shadow-orange-400 '></img>
             </Fade>
-            </div>
+            </motion.div>
             </div>
           </div>
     </>
