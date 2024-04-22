@@ -1,6 +1,6 @@
 import React from 'react'
-import Image1 from './assets/portfolio.png'
-import Image2 from './assets/e-comm.png'
+import Image1 from '../assets/portfolio.png'
+import Image2 from '../assets/e-comm.png'
 
 function projects() {
   return (

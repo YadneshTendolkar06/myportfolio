@@ -1,11 +1,11 @@
 import React ,{useState, useRef} from 'react';
-import Navbar from './navbar';
-import Introduction from './introduction';
+import Navbar from './components/navbar';
+import Introduction from './components/introduction';
 import { Fade } from "react-awesome-reveal";
 import './index.css';
-import Skills from './skills';
-import Projects from './projects';
-import Contact from './contact';
+import Skills from './components/skills';
+import Projects from './components/projects';
+import Contact from './components/contact';
 
 function App() {
   const ref = useRef(null)

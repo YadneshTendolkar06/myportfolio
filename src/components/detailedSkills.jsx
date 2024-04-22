@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react'
 import { Fade } from "react-awesome-reveal";
-import ReactIcon from './assets/ReactIcon.svg';
-import javascriptIcon from './assets/javascriptIcon.svg';
-import phpicon from './assets/phpIcon.svg';
 
 
 function detailedSkills({data}) {
