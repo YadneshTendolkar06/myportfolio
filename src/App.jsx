@@ -22,7 +22,10 @@ function App() {
       <div className='w-full min-h-screen box-border bg-orange-400'>
         <Projects />
       </div>
+      <div className='w-full min-h-[20vh] box-border bg-[#EFD593]'>
         <Contact />
+      </div>
+
 
     </>
   )

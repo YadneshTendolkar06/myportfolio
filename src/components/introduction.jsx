@@ -23,11 +23,11 @@ function introduction({reference}) {
             </div>
             </Fade>
 
-            <motion.div drag dragConstraints={reference} className='md:w-96 md:py-40 ' >
+            <div className='md:w-96 md:py-40 ' >
             <Fade direction='right'>
               <img src={myprofileImage} className=' md:rounded-3xl overflow-hidden hover:shadow-lg hover:shadow-orange-400 '></img>
             </Fade>
-            </motion.div>
+            </div>
             </div>
           </div>
     </>
