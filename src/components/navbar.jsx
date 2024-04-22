@@ -1,6 +1,7 @@
 import React from 'react'
 import Mylogo from '../assets/personal-img.jpg';
 import { TiThMenu } from "react-icons/ti";
+import { motion } from "framer-motion";
 
 
 function navbar() {
@@ -25,9 +26,16 @@ function navbar() {
   return (
     <>
       <div className='fixed z-[999] w-full px-10 md:px-24 pt-8 pb-4 md:flex md:justify-between items-center'>
-        <div className='logo w-12 h-12 rounded-full overflow-hidden'>
+
+        <motion.div initial={{ rotate: 180, scale: 1 }}
+          animate={{ rotate: 0, scale: 1 }}
+          transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20}}
+          className='logo w-12 h-12 rounded-full overflow-hidden'>
           <img src={Mylogo}></img>
-        </div>
+        </motion.div>
 
         {/* <TiThMenu onClick={()=> {}} className='text-white' /> */}
         <div className='flex gap-10'>
