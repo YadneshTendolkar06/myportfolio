@@ -8,3 +8,26 @@ h1:hover
     {
         color: white;
     }
+
+@media (max-width: 998px) {
+    .navbar1{
+        height: 8rem;
+    }
+
+    .dataOfnav{
+        display: none;
+    }
+
+    .navbar1 .hamburger-menu{
+        display: block;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 998px) {
+.mobileView{
+    position: relative;
+    z-index: 99;
+    display: flex;
+    }
+}
