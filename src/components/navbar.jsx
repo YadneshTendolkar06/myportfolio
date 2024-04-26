@@ -25,7 +25,7 @@ function navbar() {
   ]
   return (
     <>
-      <div className='fixed z-[999] w-full px-10 md:px-24 pt-8 pb-4 md:flex md:justify-between items-center'>
+      <div className='fixed z-[999] w-full px-10 md:px-24 pt-8 pb-4 flex gap-4 md:flex md:justify-between items-center'>
 
         <motion.div initial={{ rotate: 180, scale: 1 }}
           animate={{ rotate: 0, scale: 1 }}
@@ -38,7 +38,7 @@ function navbar() {
         </motion.div>
 
         {/* <TiThMenu onClick={()=> {}} className='text-white' /> */}
-        <div className='flex gap-10'>
+        <div className='flex gap-4 md:gap-10'>
           {navMenu.map((item,index) => (
 
             <a href={item.id} className={`text-white font-semibold font-poppins capitalize ${index === 3 && "md:ml-[33vw]"}`}>{item.name}</a>
