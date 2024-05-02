@@ -41,18 +41,18 @@ function navbar() {
         </motion.div>
 
         {/* <TiThMenu onClick={()=> {}} className='text-white' /> */}
-        <div className= {hamburgerContent ? 'dataOfnav mobileView h-52 w-full mt-[28vh] text-[3vh] px-5 py-3 font-poppins gap-5 flex flex-col rounded-tl-lg rounded-b-lg  text-black bg-[#e3dac9] border border-b-2 border-zinc-400': 'dataOfnav md:flex md:gap-10' } >
+        <div className= {hamburgerContent ? 'dataOfnav mobileView w-full mt-[28vh] text-[3vh] px-5 py-3 font-poppins gap-5 flex flex-col rounded-tl-lg rounded-b-lg  text-black bg-[#e3dac9] border border-b-2 border-zinc-400': 'dataOfnav md:flex md:gap-10' } >
           {navMenu.map((item,index) => (
 
-            <a href={item.id} className={`md:text-white md:font-semibold font-poppins capitalize ${index === 3 && "md:ml-[33vw]"}`}>{item.name}</a>
+            <a onClick={()=> sethamburgerContent(!hamburgerContent)} href={item.id} className={`md:text-white md:font-semibold font-poppins capitalize ${index === 3 && "md:ml-[33vw]"}`}>{item.name}</a>
 
         ))}
         </div>
         <div className='hamburger-menu text-white md:hidden'>
-          <a onClick={() => sethamburgerContent(!hamburgerContent)} href='#'>
+          <button onClick={() => sethamburgerContent(!hamburgerContent)}>
           <GiHamburgerMenu />
 
-          </a>
+          </button>
         </div>
       </div>
 

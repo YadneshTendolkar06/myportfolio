@@ -16,7 +16,9 @@ function projects() {
       <div className='-mt-[4vh]'>
         <h1 className='ml-[3vh]'>Portfolio</h1>
         <div className=' md:mx-[1vw] h-[30vh] md:w-full md:h-[60vh] pt-8 md:pt-16 bg-zinc-900  rounded-3xl overflow-hidden object-cover'>
+        <a href='https://github.com/YadneshTendolkar06/myportfolio'>
           <img src={Image1}></img>
+          </a>
         </div>
         </div>
 
@@ -24,6 +26,7 @@ function projects() {
       <h1 className='ml-[3vh]'>E-commerce Website</h1>
         <div className=' md:mx-[1vw] h-[30vh] md:h-[60vh] pt-6 md:pt-16 rounded-3xl overflow-hidden bg-zinc-900'>
           <img src={Image2}></img>
+
         </div>
       </div>
       </div>
