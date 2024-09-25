@@ -1,63 +1,56 @@
-import React, {useState} from 'react'
-import Mylogo from '../assets/personal-img.jpg';
-import { TiThMenu } from "react-icons/ti";
-import { motion } from "framer-motion";
+import { useState } from 'react'
+import navData from '../constants/navData'
+import { NavLink } from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi";
+import { ImCross } from "react-icons/im";
+import logo from '../assets/personal-img.jpg'
 
+function Navbar(){
 
-function navbar() {
-    const [hamburgerContent, sethamburgerContent] = useState(false);
+    const [isopen,setIsOpen] = useState(false);
 
-  const navMenu = [
-    {
-      name: "about",
-      id: "#about"
-    },
-    {
-      name: "skills",
-      id: "#skills"
-    },
-    {
-      name: "Project",
-      id: "#Project"
-    },
-    {
-      name: "Contact",
-      id: "#contact"
+    const toogleButton = () => {
+        setIsOpen(!isopen);
     }
-  ]
-  return (
-    <>
-      <div className='navbar1 fixed z-[999] w-full px-5 md:px-24 pt-8 pb-4 flex gap-2 md:flex justify-between md:justify-between items-center'>
 
-        <motion.div  initial={{ rotate: 180, scale: 1 }}
-          animate={{ rotate: 0, scale: 1 }}
-          transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20}}
-          className= {hamburgerContent ? 'hidden' : 'logo w-12 h-12 rounded-full overflow-hidden'}>
-          <img src={Mylogo}></img>
-        </motion.div>
+    return (
+        <>
+        <div className="fixed bg-black z-[999] w-full flex justify-between px-5 md:px-10 md:pt-8 pt-6 pb-6 md:pb-0 md:py-6 h-20 font-semibold">
+            <div className='flex gap-3'>
+            <img src={logo} className='rounded-full w-10 h-10 md:w-10' alt="" />
+            </div>
+        <div className='hidden md:flex gap-8'>
+            {
+        navData.map(val=>
+            <div key={val.id} className="flex text-lg text-zinc-200">
 
-        {/* <TiThMenu onClick={()=> {}} className='text-white' /> */}
-        <div className= {hamburgerContent ? 'dataOfnav mobileView w-full mt-[28vh] text-[3vh] px-5 py-3 font-poppins gap-5 flex flex-col rounded-tl-lg rounded-b-lg  text-black bg-[#e3dac9] border border-b-2 border-zinc-400': 'dataOfnav md:flex md:gap-10' } >
-          {navMenu.map((item,index) => (
+            <a href={val.id}>{val.name}</a>
+            </div>
+                )
+            }
+            </div>
 
-            <a onClick={()=> sethamburgerContent(!hamburgerContent)} href={item.id} className={`md:text-white md:font-semibold font-poppins capitalize ${index === 3 && "md:ml-[33vw]"}`}>{item.name}</a>
-
-        ))}
+            <div className='text-4xl text-white md:hidden'>
+                <button onClick={toogleButton}>{ isopen ? <ImCross /> : <GiHamburgerMenu />}</button>
+            </div>
         </div>
-        <div className='hamburger-menu text-white md:hidden'>
-          <button onClick={() => sethamburgerContent(!hamburgerContent)}>
-          <GiHamburgerMenu />
+        {
+            isopen && (
+                <div className='bg-white mt-20 w-full fixed z-[999] flex basis-full flex-col items-center'>
+                    {
+        navData.map(val=>
+            <div key={val.id} className="pt-5 flex font-semibold text-2xl text-zinc-600">
 
-          </button>
-        </div>
-      </div>
+            <a href={val.id}>{val.name}</a>
+            </div>
+                )
+            }
+                </div>
 
-    </>
-  )
+            )
+        }
+        </>
+    )
 }
 
-export default navbar
+export default Navbar
